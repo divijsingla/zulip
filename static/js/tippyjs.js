@@ -280,7 +280,7 @@ export function initialize() {
                     compose_state.get_message_type() === "private"
                 ) {
                     display_current_view = $t({
-                        defaultMessage: "Currently viewing all private messages.",
+                        defaultMessage: "Currently viewing all direct messages.",
                     });
                 }
             }
@@ -452,11 +452,11 @@ export function initialize() {
             if ($("#toggle_private_messages_section_icon").hasClass("fa-caret-down")) {
                 instance.setContent(
                     $t({
-                        defaultMessage: "Collapse private messages",
+                        defaultMessage: "Collapse direct messages",
                     }),
                 );
             } else {
-                instance.setContent($t({defaultMessage: "Expand private messages"}));
+                instance.setContent($t({defaultMessage: "Expand direct messages"}));
             }
             return true;
         },
@@ -468,7 +468,7 @@ export function initialize() {
         target: "#show_all_private_messages",
         placement: "bottom",
         content: $t({
-            defaultMessage: "All private messages (P)",
+            defaultMessage: "All direct messages (P)",
         }),
         appendTo: () => document.body,
     });

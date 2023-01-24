@@ -396,7 +396,7 @@ test("empty_query_suggestions", () => {
     function describe(q) {
         return suggestions.lookup_table.get(q).description_html;
     }
-    assert.equal(describe("is:private"), "Private messages");
+    assert.equal(describe("is:private"), "Direct messages");
     assert.equal(describe("is:starred"), "Starred messages");
     assert.equal(describe("is:mentioned"), "@-mentions");
     assert.equal(describe("is:alerted"), "Alerted messages");
@@ -494,7 +494,7 @@ test("check_is_suggestions", ({override}) => {
         return suggestions.lookup_table.get(q).description_html;
     }
 
-    assert.equal(describe("is:private"), "Private messages");
+    assert.equal(describe("is:private"), "Direct messages");
     assert.equal(describe("is:starred"), "Starred messages");
     assert.equal(describe("is:mentioned"), "@-mentions");
     assert.equal(describe("is:alerted"), "Alerted messages");
@@ -514,7 +514,7 @@ test("check_is_suggestions", ({override}) => {
     ];
     assert.deepEqual(suggestions.strings, expected);
 
-    assert.equal(describe("-is:private"), "Exclude private messages");
+    assert.equal(describe("-is:private"), "Exclude direct messages");
     assert.equal(describe("-is:starred"), "Exclude starred messages");
     assert.equal(describe("-is:mentioned"), "Exclude @-mentions");
     assert.equal(describe("-is:alerted"), "Exclude alerted messages");
@@ -850,9 +850,9 @@ test("people_suggestions", ({override}) => {
     function describe(q) {
         return suggestions.lookup_table.get(q).description_html;
     }
-    assert.equal(describe("pm-with:ted@zulip.com"), "Private messages with");
+    assert.equal(describe("pm-with:ted@zulip.com"), "Direct messages with");
     assert.equal(describe("sender:ted@zulip.com"), "Sent by");
-    assert.equal(describe("group-pm-with:ted@zulip.com"), "Group private messages including");
+    assert.equal(describe("group-pm-with:ted@zulip.com"), "Group direct messages including");
 
     let expectedString = "<strong>Te</strong>d Smith";
 
