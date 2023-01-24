@@ -1334,7 +1334,7 @@ def check_private_message_policy(
             # notifications from system bots to users.
             return
 
-        raise JsonableError(_("Private messages are disabled in this organization."))
+        raise JsonableError(_("Direct messages are disabled in this organization."))
 
 
 # check_message:
